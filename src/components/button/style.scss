@@ -1,0 +1,24 @@
+.button {
+  transition: background-color 0.23s ease-in-out 0s;
+  font-weight: 600;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: capitalize;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 18px;
+  cursor: pointer;
+  margin-right: 18px;
+  border: 0 none;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 13px;
+  height: 32px;
+  line-height: 32px
+}
+
+.default {
+  @extend .button;
+}
