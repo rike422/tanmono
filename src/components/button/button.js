@@ -1,6 +1,6 @@
 import React from 'react';
-let {  PropTypes, Component } = React
 import buttonStyle from './style.scss';
+let { PropTypes, Component } = React
 
 const BUTTON_TYPES = ['default', 'primary', 'success', 'warning', 'danger']
 export default class Button extends Component {
@@ -43,8 +43,8 @@ export default class Button extends Component {
   }
 
   render() {
-    let { text, children, type, ...otherProps } = this.props;
-    let styleType = buttonStyle[this.props.type]
+    const { text, children, type, ...otherProps } = this.props;
+    const styleType = buttonStyle[this.props.type];
     return (
       <button
         className={styleType}
