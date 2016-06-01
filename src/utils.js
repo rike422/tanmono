@@ -1,8 +1,5 @@
-'use strict';
-
 let assign = require('react/lib/Object.assign');
-
-let Utils = {
+const Utils = {
   /* https://speakerdeck.com/vjeux/react-css-in-js */
   m: function() {
     let res = {};

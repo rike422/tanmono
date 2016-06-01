@@ -19,24 +19,22 @@ module.exports = {
   externals: {
     'react': 'React'
   },
-  extensions: ['', '.js', '.json', '.coffee', '.css', '.jsx'],
+  resolve: {
+    extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
+    root: path.resolve(path.join(__dirname, 'src')),
+  },
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel'
-      },
-      {
-        test: /\.css$/,
         loaders: [
-          'style?sourceMap',
-          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
-        ],
-        include: __dirname
+          'babel-loader',
+          'eslint-loader'
+        ]
       },
       {
-        test: /\.scss/,
+        test: /\.(css|scss)$/,
         loaders: [
           'style?sourceMap',
           'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',

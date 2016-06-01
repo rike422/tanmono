@@ -1,4 +1,4 @@
-import {Button} from './components/button/button.js'
+import { Button } from './components/button/button.js';
 
 (function(win) {
   if(win._tanmonoLoaded) return;
@@ -7,5 +7,5 @@ import {Button} from './components/button/button.js'
 })(window);
 
 module.exports = {
-  Button: Button
+  Button,
 };
