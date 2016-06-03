@@ -11,7 +11,7 @@ const TEMPLATE_PATH = path.join(__dirname, '../', 'templates');
 const mkdirp = require('mkdirp');
 
 function render(template, context) {
-  return new Promise(function(resolve) {
+  return new Promise(function (resolve) {
     nunjucks.render(path.join(TEMPLATE_PATH, template.from), context, (err, content) => {
       if (err != null) {
         console.error(err);
@@ -33,26 +33,26 @@ function resolveConflict(_template) {
       {
         key: 'y',
         name: 'yes, overwrite',
-        value: 'overwrite'
+        value: 'overwrite',
       },
       {
         key: 'a',
         name: 'all, Overwrite this one and all next',
-        value: 'overwrite_all'
+        value: 'overwrite_all',
       },
       {
         key: 'n',
         name: 'no, do not overwrite',
-        value: 'no'
+        value: 'no',
       },
       new inquirer.Separator(),
       {
         key: 'q',
         name: 'Quit this process',
-        value: 'quit'
-      }
-    ]
-  }).then((answer) => answer)
+        value: 'quit',
+      },
+    ],
+  }).then((answer) => answer);
 }
 
 function mkdir(outputPath, cb) {
@@ -77,45 +77,45 @@ program
     const GENERATE_FILES = [
       {
         from: path.join('src', 'component', 'component.jsx.njk'),
-        to: path.join('src', 'components', context.directoryName, `${context.directoryName}.jsx`)
+        to: path.join('src', 'components', context.directoryName, `${context.directoryName}.jsx`),
       },
       {
         from: path.join('src', 'component', 'README.md.njk'),
-        to: path.join('src', 'components', context.directoryName, 'README.md')
+        to: path.join('src', 'components', context.directoryName, 'README.md'),
       },
       {
         from: path.join('src', 'component', 'style.scss.njk'),
-        to: path.join('src', 'components', context.directoryName, 'style.scss')
+        to: path.join('src', 'components', context.directoryName, 'style.scss'),
       },
       {
         from: path.join('src', 'stories', 'story.js.njk'),
-        to: path.join('src', 'stories', `${context.directoryName}.jsx`)
+        to: path.join('src', 'components', 'stories', `${context.directoryName}.jsx`),
       },
       {
         from: path.join('tests', 'test.js.njk'),
-        to: path.join('test', 'components', context.directoryName, `${context.directoryName}_spec.jsx`)
-      }
+        to: path.join('test', 'components', context.directoryName, `${context.directoryName}_spec.jsx`),
+      },
     ];
-    GENERATE_FILES.reduce((promise, template, i) => {
+    GENERATE_FILES.reduce((promise, template) => {
       return promise.then((answerHistory) => {
         var answerHistory = answerHistory || [];
         if (fs.existsSync(template.to) && (answerHistory.every((history) => history !== 'overwrite_all'))) {
           return resolveConflict(template).then((answer) => {
-            answerHistory.push(answer.choice)
+            answerHistory.push(answer.choice);
             switch (answer.choice) {
               case 'overwrite':
               case 'overwrite_all':
-                return render(template, context).then(() => Promise.resolve(answerHistory))
+                return render(template, context).then(() => Promise.resolve(answerHistory));
               case 'no':
                 return Promise.resolve(answerHistory);
               case 'quit':
-                console.log('Aborting...')
-                process.exit(0)
+                console.log('Aborting...');
+                process.exit(0);
                 break;
             }
-          })
+          });
         }
-        return render(template, context).then(() => Promise.resolve(answerHistory))
+        return render(template, context).then(() => Promise.resolve(answerHistory));
       });
     }, Promise.resolve([])).catch(console.error);
   });
