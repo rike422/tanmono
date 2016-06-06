@@ -67,6 +67,7 @@ function writeFile(path, content) {
 program.version('0.0.1');
 program
   .command('generate <name>')
+  .alias('g')
   .description('Generate new react component')
   .action((name, args) => {
     const context = {
