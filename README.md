@@ -2,10 +2,22 @@
 
 [demo](https://rike422.github.io/tanmono/)
 
-## Installation
+A project template for creating stand-alone my React components. It is pre-configured with
 
-tanmono is themalable react components [npm package](https://www.npmjs.com/package/tanmono)
+- React
+- Babel
+- CSSModules
+- Webpack
+- karma
+- mocha + power-assert
 
-```sh
-npm install tanmono
+## Commands
+
+### Generator
+
 ```
+npm run generate <moduleName>
+```
+
+### how to test
+
