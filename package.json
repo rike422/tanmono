@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "karma start",
+    "generate": "bin/cli generate",
     "watch": "npm run test;",
     "deploy-storybook": "storybook-to-ghpages",
     "storybook": "start-storybook -p 9001"
