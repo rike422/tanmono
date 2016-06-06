@@ -20,5 +20,5 @@
 }
 
 .default {
-  @extend .button;
+  composes: button;
 }
