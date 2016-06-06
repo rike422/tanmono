@@ -44,7 +44,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
     "change-case": "^2.3.1",
-    "commander": "^2.9.0",
+    "commander": "rike422/commander.js#support_subcommand_alias",
     "css-loader": "^0.23.1",
     "css-modules-require-hook": "^4.0.1",
     "david": "^7.0.2",
