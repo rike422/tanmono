@@ -4,8 +4,8 @@ const program = require('commander');
 
 program
   .version('0.0.1')
-  .command('generate [name]', "generate components")
-  .command('destroy [name]', "destroy components")
+  .command('generate [name]', "generate components").alias('g')
+  .command('destroy [name]', "destroy components").alias('d')
   // .alias('g')
   // .description('Generate new react component')
   .parse(process.argv);
