@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^1.28.1",
-    "autoprefixer": "^6.3.6",
+    "autoprefixer-core": "^6.0.1",
     "babel": "^6.5.2",
     "babel-core": "^6.9.1",
     "babel-eslint": "^6.0.4",
@@ -70,6 +70,7 @@
     "node-sass": "^3.7.0",
     "nunjucks": "^2.4.2",
     "phantomjs-prebuilt": "^2.1.7",
+    "postcss-color-rebeccapurple": "^2.0.0",
     "postcss-loader": "^0.9.1",
     "power-assert": "^1.4.1",
     "react-addons-test-utils": "^15.1.0",

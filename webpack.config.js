@@ -1,15 +1,10 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval',
-  entry: [
-    './src/index.js'
-  ],
-  output: {
-    filename: 'index.js',
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/static/'
+  entry: {
+    tanmono: './src/index.js'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -19,10 +14,17 @@ module.exports = {
   externals: {
     'react': 'React'
   },
+
   resolve: {
     extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
     root: path.resolve(path.join(__dirname, 'src')),
   },
+
+  postcss: [
+    require('autoprefixer-core'),
+    require('postcss-color-rebeccapurple')
+  ],
+
   module: {
     loaders: [
       {
@@ -39,6 +41,7 @@ module.exports = {
           'style?sourceMap',
           'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
           'resolve-url',
+          'postcss-loader',
           'sass?sourceMap'
         ],
         include: __dirname
