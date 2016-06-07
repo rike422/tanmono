@@ -8,11 +8,13 @@
     "url": "rike422/tanmono"
   },
   "scripts": {
-    "test": "karma start",
+    "test": "env NODE_ENV=test /karma start",
     "generate": "bin/cli generate",
     "watch": "npm run test;",
     "deploy-storybook": "storybook-to-ghpages",
-    "storybook": "start-storybook -p 9001"
+    "storybook": "start-storybook -p 9001",
+    "build": "env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "lint": "./node_modules/.bin/eslint"
   },
   "homepage": "http://react-skeleton.github.io",
   "keywords": [
