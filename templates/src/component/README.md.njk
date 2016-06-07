@@ -15,6 +15,13 @@ class ExampleComponent extends React.Component {
     return ( <{{ className }}></{{ className }}> );
   }
 }
-
-
 ```
+
+### Proptypes
+
+| Name | Type | isRequired |
+|:----------|:--------:|:--------:|
+{% for propType in propTypes -%}
+| {{ propType.name }} | {{ propType.type }} | {{ 'true' if propType.require else 'false' }} |
+{% endfor -%}
+
