@@ -9,7 +9,7 @@ export default class Button extends Component {
     super(props);
     this.state = {};
   }
-
+  
   static displayName = 'Button';
 
   static propTypes = {

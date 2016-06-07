@@ -63,6 +63,7 @@ function writeFile(path, content) {
   console.log(`write ${path}`);
   fs.writeFile(path, content);
 }
+
 module.exports = function (files, context) {
   files.reduce((promise, template) => {
     return promise.then((answerHistory) => {
