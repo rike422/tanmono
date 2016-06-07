@@ -6,8 +6,46 @@ const changCase = require('change-case');
 const path = require('path');
 const generate = require('./_generator-util');
 
-program.parse(process.argv);
+const SUPPORT_PROP_TYPES = [
+  'array',
+  'bool',
+  'func',
+  'number',
+  'object',
+  'string',
+  'node',
+  'element',
+  'arrayOf',
+  'objectOf',
+  'oneOf',
+  'func',
+  'any',
+];
+
+function splitProptypes(val) {
+  return val.split(',').map((src) => {
+    const params = src.split(':');
+    const isRequire = params[2] === 'require';
+    const propType = {
+      name: params[0],
+      type: params[1],
+      require: isRequire,
+    };
+    if(propType.type !== undefined && SUPPORT_PROP_TYPES.every(
+        (supportType) => propType.type.indexOf(supportType) === -1)) {
+      console.error(`Abort.. ${propType.type} is invalid propType`);
+      process.exit(1);
+    }
+    return propType;
+  });
+}
+
+program
+  .option('-p, --prop-types <propTypes>', 'Define propTypes', splitProptypes)
+  .parse(process.argv);
+
 const name = program.args[0];
+const propTypes = program.propTypes;
 
 if(name == undefined) {
   console.error('Abort.. [name] is required');
@@ -17,6 +55,7 @@ if(name == undefined) {
 const context = {
   className: changCase.pascalCase(name),
   directoryName: changCase.paramCase(name),
+  propTypes: propTypes,
   pkg: require('../package.json'),
 };
 

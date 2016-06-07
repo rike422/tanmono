@@ -11,6 +11,9 @@ export default class {{ className }} extends React.Component {
   static displayName = '{{ className }}';
 
   static propTypes = {
+    {% for propType in propTypes -%}
+    {{ propType.name }}: React.PropTypes.{{ propType.type }}{{ '.isRequired' if propType.require else '' }},
+    {% endfor -%}
   };
 
   static defaultProps = {
