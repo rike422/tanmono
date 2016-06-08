@@ -1,9 +1,9 @@
 import { configure } from '@kadira/storybook';
 
 function loadStories() {
-  {% for filePath in storyFilePaths %}
+{% for filePath in storyFilePaths %}
   require('{{ filePath }}');
-  {% endfor %}
+{% endfor %}
 }
 
 configure(loadStories, module);
