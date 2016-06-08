@@ -45,10 +45,12 @@ function splitProptypes(val) {
 
 program
   .option('-p, --prop-types <propTypes>', 'Define propTypes', splitProptypes)
+  .option('-c, --css-classes <cssClasses>', 'Define css class', (val) => val.split(','))
   .parse(process.argv);
 
 const name = program.args[0];
 const propTypes = program.propTypes;
+const cssClasses = program.cssClasses;
 
 if(name == undefined) {
   console.error('Abort.. [name] is required');
@@ -58,6 +60,7 @@ if(name == undefined) {
 const context = {
   className: changCase.pascalCase(name),
   directoryName: changCase.paramCase(name),
+  cssClasses: cssClasses,
   propTypes: propTypes,
   pkg: require('../package.json'),
 };

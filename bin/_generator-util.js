@@ -14,6 +14,7 @@ nunjucks.configure({
   trimBlocks: true,
   lstripBlocks: true
 })
+
 function render(template, context) {
   return new Promise(function (resolve) {
     nunjucks.render(path.join(TEMPLATE_PATH, template.from), context, (err, content) => {
