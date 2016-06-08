@@ -33,7 +33,10 @@ function splitProptypes(val) {
     };
     if(propType.type !== undefined && SUPPORT_PROP_TYPES.every(
         (supportType) => propType.type.indexOf(supportType) === -1)) {
-      console.error(`Abort.. ${propType.type} is invalid propType`);
+      console.error(`
+      Abort.. ${propType.type} is invalid propType
+      Look up https://facebook.github.io/react/docs/reusable-components.html
+`);
       process.exit(1);
     }
     return propType;
