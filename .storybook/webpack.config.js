@@ -6,8 +6,19 @@ module.exports = {
     filename: 'index.js',
     path: path.join(__dirname, '../', 'tmp'),
   },
+  resolve: {
+    extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.jsx']
+  },
   module: {
     loaders: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        loaders: [
+          'babel-loader',
+          'eslint-loader'
+        ]
+      },
       {
         test: /\.scss/,
         loaders: [
