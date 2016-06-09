@@ -7,6 +7,7 @@ A project template for creating stand-alone my React components. It is pre-confi
 - React
 - Babel
 - CSSModules
+- SASS
 - Webpack
 - karma
 - mocha + power-assert
