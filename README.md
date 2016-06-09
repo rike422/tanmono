@@ -1,6 +1,6 @@
-# [tanmono](http://rike422.github.io/tanmono/)
+# [react-component-base](http://rike422.github.io/react-component-base/)
 
-[demo](https://rike422.github.io/tanmono/)
+[demo](https://rike422.github.io/react-component-base/)
 
 A project template for creating stand-alone my React components. It is pre-configured with
 
