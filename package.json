@@ -1,11 +1,11 @@
 {
-  "name": "react-component-base",
+  "name": "tanmono",
   "version": "0.0.1",
   "description": "c",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "rike422/react-component-base"
+    "url": "rike422/tanmono"
   },
   "scripts": {
     "test": "env NODE_ENV=test /karma start",
