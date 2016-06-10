@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'eval',
   entry: {
-    index: 'src/index.js'
+    index: 'index.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -13,6 +14,9 @@ module.exports = {
     filename: '[name].js'
   },
   plugins: [
+    new ExtractTextPlugin('app.css', {
+      allChunks: true
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -50,13 +54,14 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        loaders: [
-          'style',
+        loader: ExtractTextPlugin.extract(
+          'style-loader',
           'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
           'resolve-url',
           'postcss-loader',
           'sass'
-        ],
+        ),
+        exclude: /node_modules/,
         include: __dirname
       },
       {
