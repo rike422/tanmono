@@ -6,6 +6,10 @@ module.exports = {
     filename: 'index.js',
     path: path.join(__dirname, '../', 'tmp'),
   },
+
+  resolve: {
+    extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
+  },
   module: {
     loaders: [
       {
