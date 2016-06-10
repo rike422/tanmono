@@ -3,8 +3,6 @@ import { storiesOf, action } from '@kadira/storybook';
 import {{ className }} from '../{{ directoryName }}/{{ directoryName }}';
 
 storiesOf('{{ className }}', module)
-  .add('render', () => {
-    <{{ className }}></{{ className }}>
-  })
-)
+  .add('render', () => <{{ className }}></{{ className }}>)
+
 
