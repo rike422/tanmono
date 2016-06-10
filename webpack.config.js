@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   entry: {
-    tanmono: './src/index.js'
+    index: './src/index.js'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
