@@ -8,7 +8,7 @@
     "url": "rike422/react-component-base"
   },
   "scripts": {
-    "test": "env NODE_ENV=test /karma start",
+    "test": "env NODE_ENV=test karma start",
     "generate": "bin/cli generate",
     "watch": "npm run test;",
     "deploy-storybook": "storybook-to-ghpages",
