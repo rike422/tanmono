@@ -1,7 +1,9 @@
-import React from 'react';
+import { Component, PropTypes } from 'react';
+import CSSModules from 'react-css-modules';
 import {{ className }}Style from './style.scss';
 
-export default class {{ className }} extends React.Component {
+@CSSModules({{ className }}Style)
+export default class {{ className }} extends Component {
 
   constructor(props) {
     super(props);
@@ -12,7 +14,7 @@ export default class {{ className }} extends React.Component {
 
   static propTypes = {
   {% for propType in propTypes%}
-    {{ propType.name }}: React.PropTypes.{{ propType.type }}{{ '.isRequired' if propType.require else '' }},
+    {{ propType.name }}: PropTypes.{{ propType.type }}{{ '.isRequired' if propType.require else '' }},
   {% endfor %}
   };
 
@@ -33,7 +35,7 @@ export default class {{ className }} extends React.Component {
 
   render() {
     return (
-      <{{ className }}></{{ className }}>
+      <div styleName="{{ directoryName }}"></div>
     );
   }
 }
