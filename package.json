@@ -26,6 +26,7 @@
   "dependencies": {
     "@kadira/storybook-deployer": "^1.0.0",
     "babel-polyfill": "^6.9.1",
+    "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
