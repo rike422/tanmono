@@ -13,8 +13,9 @@
     "watch": "npm run test;",
     "deploy-storybook": "storybook-to-ghpages",
     "storybook": "start-storybook -p 9001",
+    "prebuild": "npm run lint:js && npm run lint:css;",
     "build": "env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "lint:js": "./node_modules/.bin/eslint",
+    "lint:js": "./node_modules/.bin/eslint -c '.eslintrc' src/**/*.jsx",
     "lint:css": "./node_modules/.bin/sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -q"
   },
   "homepage": "http://react-skeleton.github.io",
