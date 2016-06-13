@@ -14,7 +14,8 @@
     "deploy-storybook": "storybook-to-ghpages",
     "storybook": "start-storybook -p 9001",
     "build": "env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "lint": "./node_modules/.bin/eslint"
+    "lint:js": "./node_modules/.bin/eslint",
+    "lint:css": "./node_modules/.bin/sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -q"
   },
   "homepage": "http://react-skeleton.github.io",
   "keywords": [
@@ -31,6 +32,7 @@
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },
+  "sasslintConfig": "./.sass-lint.yml",
   "devDependencies": {
     "@kadira/storybook": "^1.28.1",
     "autoprefixer-core": "^6.0.1",
@@ -51,6 +53,7 @@
     "commander": "rike422/commander.js#support_subcommand_alias",
     "css-loader": "^0.23.1",
     "css-modules-require-hook": "^4.0.1",
+    "csscomb": "^3.1.8",
     "david": "^7.0.2",
     "empower": "^1.2.0",
     "enzyme": "^2.3.0",
@@ -82,6 +85,7 @@
     "react-css-modules": "^3.7.6",
     "react-dom": "^15.1.0",
     "resolve-url-loader": "^1.4.3",
+    "sass-lint": "^1.7.0",
     "sass-loader": "^3.2.0",
     "sinon": "^1.17.4",
     "style-loader": "^0.13.1",
