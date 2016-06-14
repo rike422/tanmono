@@ -6,35 +6,28 @@
 // ------------------------------
 
 $background-color-code: #f7f7f7 !default;
-
-
-$color-base-border: #ccc !default;
+$color-base-border: #ddd !default;
 $color-black: #000 !default;
-$color-blue: #117ec6 !default;
-$color-blue-dark: darken($color-blue, 5%) !default;
-$color-gray-dark: #333 !default;
-$color-gray-darker: #222 !default;
-$color-gray-light: #999 !default;
-$color-gray-lighter: #eee !default;
-$color-gray: #555 !default;
-$color-green: #59bb0c !default;
-$color-green-dark: darken($color-green, 5%) !default;
-$color-link: #337ab7 !default;
+$color-blue: #6BBED5 !default;
+$color-blue-darken: darken($color-blue, 15%);
+$color-blue-lighten: lighten($color-blue, 15%);
+$color-gray: #333 !default;
+$color-green: #81D674 !default;
+$color-green-darken: darken($color-green, 15%);
+$color-green-lighten: lighten($color-green, 15%);
+
+$color-link: #1586BF !default;
 $color-link-visited: #685987 !default;
-$color-orange: #f89406 !default;
-$color-pink: #c3325f !default;
-$color-purple: #7a43b6 !default;
-$color-qiita: #59bb0c !default;
-$color-qiita-light: lighten($color-qiita, 30%) !default;
-$color-red: #ee836e !default;
+$color-orange: #F9D004 !default;
+$color-red: #D04255 !default;
 $color-text: #4a4a4a !default;
 $color-white: #fff !default;
-$color-yellow: #ffc40d !default;
+$color-yellow: #F6D580 !default;
 
-$app-danger: #ee836e;
-$app-info: #0090e0;
-$app-success: #34c240;
-$app-warning: #fa9f47;
+$app-danger: $color-red;
+$app-info: $color-blue;
+$app-success: $color-green;
+$app-warning: $color-yellow;
 
 
 // Fonts
