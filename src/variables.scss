@@ -7,21 +7,21 @@
 $background-color-code: #f7f7f7 !default;
 $color-base-border: #ddd !default;
 $color-black: #000 !default;
-$color-blue: #6BBED5 !default;
+$color-blue: #2090C1 !default;
 $color-blue-darken: darken($color-blue, 15%);
 $color-blue-lighten: lighten($color-blue, 15%);
-$color-gray: #333 !default;
-$color-green: #81D674 !default;
+$color-gray: #AAAAAA !default;
+$color-green: #25AA6E !default;
 $color-green-darken: darken($color-green, 15%);
 $color-green-lighten: lighten($color-green, 15%);
 
 $color-link: #1586BF !default;
 $color-link-visited: #685987 !default;
-$color-orange: #F9D004 !default;
-$color-red: #D04255 !default;
+$color-orange: #E7882A !default;
+$color-red: #D34C5E !default;
 $color-text: #4a4a4a !default;
 $color-white: #fff !default;
-$color-yellow: #F6D580 !default;
+$color-yellow: #F0BA32 !default;
 
 $app-danger: $color-red;
 $app-info: $color-blue;
