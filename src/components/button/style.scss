@@ -1,5 +1,12 @@
 @import '../../variables.scss';
 
+@mixin set-bg-color-and-hover($baseColor) {
+  background-color: $baseColor;
+  &:hover {
+    background-color: darken($baseColor, 10%)
+  }
+}
+
 .button {
   transition: background-color 0.23s ease-in-out 0s;
   text-align: center;
@@ -14,18 +21,30 @@
   border: 0 none;
   border-radius: 3px;
   display: inline-block;
-  font-size: 13px;
   color: whitesmoke;
   height: 32px;
-  line-height: 32px
+  line-height: 32px;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .default {
-  background-color: $app-info;
+  @include set-bg-color-and-hover($app-info);
   composes: button;
 }
 
-.alert {
-  background-color: $app-danger;
+.danger {
+  @include set-bg-color-and-hover($app-danger);
+  composes: button;
+}
+
+.warning {
+  @include set-bg-color-and-hover($app-warning);
+  composes: button;
+}
+
+.success {
+  @include set-bg-color-and-hover($app-success);
   composes: button;
 }
