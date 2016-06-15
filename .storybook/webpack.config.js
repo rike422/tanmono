@@ -2,9 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
+  context: path.resolve(__dirname, '../', 'src'),
   output: {
     filename: 'index.js',
-    path: path.join(__dirname, '../', 'tmp'),
+    path: path.resolve(__dirname, '../', 'tmp'),
   },
 
   resolve: {
