@@ -24,7 +24,6 @@ export default class Button extends Component {
   };
 
   static defaultProps = {
-    primary: false,
     disabled: false,
     type: 'default',
   };
