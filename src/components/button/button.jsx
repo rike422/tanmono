@@ -1,9 +1,12 @@
-import React from 'react';
-import ButtonStyle from './style.scss';
+import React from "react";
+import CSSModules from "react-css-modules";
+import ButtonStyle from "./style.scss";
+const { PropTypes, Component } = React;
 
 const BUTTON_TYPES = ['default', 'primary', 'success', 'warning', 'danger'];
 
-export default class Button extends React.Component {
+@CSSModules(ButtonStyle)
+export default class Button extends Component {
 
   constructor(props) {
     super(props);
@@ -16,7 +19,6 @@ export default class Button extends React.Component {
     disabled: PropTypes.bool,
     text: PropTypes.string,
     type: PropTypes.oneOf(BUTTON_TYPES),
-    theme: PropTypes.object,
     submit: PropTypes.bool,
     preventFocusStyleForTouchAndClick: PropTypes.bool
   };
@@ -26,7 +28,6 @@ export default class Button extends React.Component {
     disabled: false,
     type: 'default',
   };
-
 
   componentWillMount() {
   }
@@ -42,15 +43,14 @@ export default class Button extends React.Component {
 
   render() {
     const { text, children, type, ...otherProps } = this.props;
-    const styleType = buttonStyle[this.props.type];
     return (
-      <button
-        className={styleType}
-        submit={() => { ::this.props.submit || true } }
-        { ...otherProps }
-      >
-        { this.props.children }
-      </button>
+    <button
+      styleName={type}
+      submit={() => { ::this.props.submit || true } }
+      { ...otherProps }
+    >
+      { this.props.children }
+    </button>
     );
   }
 }

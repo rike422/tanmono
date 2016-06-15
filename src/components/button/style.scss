@@ -1,7 +1,7 @@
+@import '../../variables.scss';
+
 .button {
   transition: background-color 0.23s ease-in-out 0s;
-  font-weight: 600;
-  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, Verdana, sans-serif;
   text-align: center;
   vertical-align: middle;
   text-transform: capitalize;
@@ -15,14 +15,17 @@
   border-radius: 3px;
   display: inline-block;
   font-size: 13px;
+  color: whitesmoke;
   height: 32px;
   line-height: 32px
 }
 
 .default {
+  background-color: $app-info;
   composes: button;
 }
 
 .alert {
-
+  background-color: $app-danger;
+  composes: button;
 }
