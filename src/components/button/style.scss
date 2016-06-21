@@ -3,7 +3,11 @@
 @mixin set-bg-color-and-hover($baseColor) {
   background-color: $baseColor;
   &:hover {
-    background-color: darken($baseColor, 10%)
+    background-color: lighten($baseColor, 5%)
+  }
+
+  &:disabled {
+    opacity: 0.4;
   }
 }
 
