@@ -28,7 +28,6 @@ $app-info: $color-blue;
 $app-success: $color-green;
 $app-warning: $color-yellow;
 
-
 // Fonts
 // ------------------------------
 
@@ -36,4 +35,13 @@ $font-family-code: Consolas, 'Liberation Mono', Menlo, Courler, monospace !defau
 $font-family-italic: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', '游ゴシック', YuGothic, sans-serif !default;
 $font-family-sans-serif: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif !default;
 $font-family-serif: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif !default;
+
+$line-height-base: 1.4;
+
+$link-hover-decoration: underline;
+
+$base-font-size-px: 15px !default;
+$font-size-xs: 0.8rem;
+$font-size-sm: 0.9rem;
+$font-size-lg: 1.25rem;
 
