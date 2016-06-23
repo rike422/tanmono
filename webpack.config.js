@@ -50,7 +50,15 @@ module.exports = {
         test: /\.json$/,
         loader: 'json-loader',
         include: __dirname
-      }
+      },
+      {
+        test: /\.(png|gif|jp(e)?g)$/,
+        loader: 'url-loader?limit=8192'
+      },
+      {
+        test: /\.(ttf|eot|svg|woff(2))(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=50000'
+      },
     ]
   }
 }
