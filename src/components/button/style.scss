@@ -3,7 +3,7 @@
 @mixin set-bg-color-and-hover($baseColor) {
   background-color: $baseColor;
   &:hover {
-    background-color: lighten($baseColor, 5%)
+    background-color: darken($baseColor, 5%)
   }
 
   &:disabled {
@@ -12,6 +12,8 @@
 }
 
 .button {
+  font-style: $font-family-code;
+  font-size: 15px;
   transition: background-color 0.23s ease-in-out 0s;
   text-align: center;
   vertical-align: middle;
@@ -19,18 +21,15 @@
   user-select: none;
   white-space: nowrap;
   overflow: hidden;
-  padding: 0 18px;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   margin-right: 18px;
   border: 0 none;
   border-radius: 3px;
   display: inline-block;
   color: whitesmoke;
+  font-size: 13px;
   height: 32px;
-  line-height: 32px;
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .default {
@@ -51,4 +50,10 @@
 .success {
   @include set-bg-color-and-hover($app-success);
   composes: button;
+}
+
+.large {
+  height: 48px;
+  line-heigh: 48px;
+  font-size: $font-size-lg;
 }

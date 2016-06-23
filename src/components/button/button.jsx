@@ -1,20 +1,22 @@
-import React from "react";
-import CSSModules from "react-css-modules";
-import ButtonStyle from "./style.scss";
+import React from 'react';
+import CSSModules from 'react-css-modules';
+import ButtonStyle from './style.scss';
+import classnames from 'classnames';
 const { PropTypes, Component } = React;
 
 const BUTTON_TYPES = ['default', 'primary', 'success', 'warning', 'danger'];
+const BUTTON_SIZES = ['default', 'large'];
 
-@CSSModules(ButtonStyle)
+@CSSModules(ButtonStyle, { allowMultiple: true})
 export default class Button extends Component {
-
+  
   constructor(props) {
     super(props);
     this.state = {};
   }
-
+  
   static displayName = 'Button';
-
+  
   static propTypes = {
     disabled: PropTypes.bool,
     text: PropTypes.string,
@@ -22,33 +24,35 @@ export default class Button extends Component {
     submit: PropTypes.bool,
     preventFocusStyleForTouchAndClick: PropTypes.bool
   };
-
+  
   static defaultProps = {
     disabled: false,
     type: 'default',
+    size: 'default',
   };
-
+  
   componentWillMount() {
   }
-
+  
   componentWillReceiveProps(properties) {
   }
-
+  
   componentDidUpdate() {
   }
-
+  
   componentWillUnmount() {
   }
-
+  
   render() {
-    const { text, children, type, ...otherProps } = this.props;
+    const { text, children, type, size, ...otherProps } = this.props;
+    const style = classnames(type, size)
     return (
     <button
-      styleName={type}
-      submit={() => { ::this.props.submit || true } }
-      { ...otherProps }
+    styleName={style}
+    submit={() => { ::this.props.submit || true } }
+    { ...otherProps }
     >
-      { this.props.children }
+    { this.props.children }
     </button>
     );
   }
