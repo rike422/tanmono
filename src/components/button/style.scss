@@ -1,0 +1,67 @@
+@import '../../variables.scss';
+
+@mixin set-bg-color-and-hover($baseColor) {
+  background-color: $baseColor;
+  &:hover {
+    background-color: darken($baseColor, 5%)
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+.button {
+  font-style: $font-family-code;
+  font-size: 15px;
+  transition: background-color 0.23s ease-in-out 0s;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: capitalize;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-right: 18px;
+  border: 0 none;
+  border-radius: 3px;
+  display: inline-block;
+  color: whitesmoke;
+  font-size: 13px;
+  height: 32px;
+}
+
+.default {
+  @include set-bg-color-and-hover($app-info);
+  composes: button;
+}
+
+.danger {
+  @include set-bg-color-and-hover($app-danger);
+  composes: button;
+}
+
+.warning {
+  @include set-bg-color-and-hover($app-warning);
+  composes: button;
+}
+
+.success {
+  @include set-bg-color-and-hover($app-success);
+  composes: button;
+}
+
+.large {
+  height: 48px;
+  line-heigh: 48px;
+  font-size: $font-size-lg;
+}
+
+.loading {
+  background-size: 30px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  padding-left: 55px;
+  background-image: url(./loading.svg)
+}

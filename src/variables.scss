@@ -1,0 +1,46 @@
+//
+// Variables
+// ==============================
+
+// Colours
+// ------------------------------
+$background-color-code: #f7f7f7 !default;
+$color-base-border: #ddd !default;
+$color-black: #000 !default;
+$color-blue: #2090C1 !default;
+$color-blue-darken: darken($color-blue, 15%);
+$color-blue-lighten: lighten($color-blue, 15%);
+$color-gray: #AAAAAA !default;
+$color-green: #25AA6E !default;
+$color-green-darken: darken($color-green, 15%);
+$color-green-lighten: lighten($color-green, 15%);
+
+$color-link: #1586BF !default;
+$color-link-visited: #685987 !default;
+$color-orange: #E7882A !default;
+$color-red: #D34C5E !default;
+$color-text: #4a4a4a !default;
+$color-white: #fff !default;
+$color-yellow: #F0BA32 !default;
+
+$app-danger: $color-red;
+$app-info: $color-blue;
+$app-success: $color-green;
+$app-warning: $color-yellow;
+
+// Fonts
+// ------------------------------
+
+$font-family-code: Consolas, 'Liberation Mono', Menlo, Courler, monospace !default;
+$font-family-italic: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', '游ゴシック', YuGothic, sans-serif !default;
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif !default;
+$font-family-serif: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif !default;
+
+$line-height-base: 1.4;
+
+$link-hover-decoration: underline;
+
+$base-font-size-px: 15px !default;
+$font-size-xs: 0.8rem;
+$font-size-sm: 0.9rem;
+$font-size-lg: 1.25rem;
