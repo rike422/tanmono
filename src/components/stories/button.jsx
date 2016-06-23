@@ -2,6 +2,34 @@ import React from "react";
 import { storiesOf } from "@kadira/storybook";
 import Button from "../button/button";
 
+const ProgressButtonWrapper = React.createClass({
+  getInitialState() {
+    return {
+      button1: false,
+      button2: false
+    };
+  },
+  render() {
+    return (
+    <section>
+      <h2>Sizes</h2>
+      <div>
+        <Button type={"warning"}
+                onClick={() => this.setState({ 'button1': !this.state.button1 })}
+                loading={this.state.button1}>
+          Defalut Button
+        </Button>
+        <Button type={"danger"}
+                onClick={() => this.setState({ 'button2': !this.state.button2 })}
+                loading={this.state.button2} size={"large"}>
+          Large Button
+        </Button>
+      </div>
+    </section>
+    );
+  }
+});
+
 storiesOf('Button', module)
 .add('Buttons', function() {
   return (
@@ -25,6 +53,11 @@ storiesOf('Button', module)
   </div>
   );
 })
+.add('Buttons/Progress', function() {
+  return (
+  <ProgressButtonWrapper></ProgressButtonWrapper>
+  );
+})
 .add('Buttons/Disabled', function() {
   return (
   <section>
@@ -36,6 +69,6 @@ storiesOf('Button', module)
       <Button type={"danger"} disabled={true}>test</Button>
     </div>
   </section>
-  )
+  );
 });
 
