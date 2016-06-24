@@ -27,6 +27,7 @@ export default class Button extends Component {
     loading: false,
     type: 'default',
     size: 'default',
+    children: PropTypes.node,
   };
 
   constructor(props) {
