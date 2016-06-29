@@ -5,11 +5,6 @@ import {{ className }}Style from './style.scss';
 @CSSModules({{ className }}Style)
 export default class {{ className }} extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   static displayName = '{{ className }}';
 
   static propTypes = {
@@ -20,6 +15,11 @@ export default class {{ className }} extends Component {
 
   static defaultProps = {
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   componentWillMount() {
   }
