@@ -5,8 +5,9 @@ import {{ className }}Style from 'components/{{ directoryName }}/style';
 import { shallow } from 'enzyme';
 
 describe('<{{ className }}>', () => {
-  it('class is assingd defalut',() => {
-    const button = shallow(<{{ className }}></{{ className }}>);
-    assert(false);
+  it('class is assingd defalut', () => {
+    const {{ instanceName }} = shallow(<{{ className }} />);
+    assert({{ className }}Style !== undefined);
+    assert({{ instanceName }} !== undefined);
   });
 });

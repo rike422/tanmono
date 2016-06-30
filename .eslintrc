@@ -5,5 +5,17 @@
     "describe": true,
     "context": true,
     "it": true
+  },
+  "plugins": [
+    "import"
+  ],
+  "settings": {
+    "import/resolver": "webpack"
+  },
+  "rules": {
+    "new-cap": [ 1, { "capIsNew": false } ], // For es7/decorators
+  },
+  "parserOptions": {
+    "ecmaVersion": 7
   }
 }

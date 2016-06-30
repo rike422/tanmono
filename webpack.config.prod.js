@@ -32,17 +32,17 @@ module.exports = {
   externals: {
     'react': 'React'
   },
-  
+
   resolve: {
     extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
     root: path.resolve(path.join(__dirname, 'src')),
   },
-  
+
   postcss: [
-    require('autoprefixer-core'),
+    require('autoprefixer'),
     require('postcss-color-rebeccapurple')
   ],
-  
+
   module: {
     loaders: [
       {

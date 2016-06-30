@@ -60,6 +60,7 @@ if(name == undefined) {
 const context = {
   className: changCase.pascalCase(name),
   directoryName: changCase.paramCase(name),
+  instanceName: changCase.camelCase(name),
   cssClasses: cssClasses,
   propTypes: propTypes,
   pkg: require('../package.json'),
