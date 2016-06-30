@@ -17,7 +17,7 @@ module.exports = {
 
   resolve: {
     extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
-    root: path.resolve(path.join(__dirname, 'src')),
+    root: [path.resolve('src')],
   },
 
   postcss: [
@@ -26,13 +26,23 @@ module.exports = {
   ],
 
   module: {
+    preLoaders: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'eslint-loader',
+        exclude: /(node_modules|bower_components)/,
+        include: [
+          path.resolve('src'),
+          path.resolve('test')
+        ]
+      }
+    ],
     loaders: [
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loaders: [
           'babel-loader',
-          'eslint-loader'
         ]
       },
       {

@@ -8,19 +8,19 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './',
 
     frameworks: ['mocha'],
 
     files: [
-      'test/**/*_spec.js'
+      'test/**/*_spec.jsx'
     ],
 
     exclude: [],
 
     preprocessors: {
-      'test/**/*_spec.js': ['webpack'],
-      'src/**/*.js': ['webpack']
+      'test/**/*_spec.jsx': ['webpack'],
+      'src/**/*.jsx': ['webpack']
     },
 
     plugins: [
@@ -43,7 +43,7 @@ module.exports = function(config) {
 
     autoWatch: true,
 
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
     singleRun: false,
 
