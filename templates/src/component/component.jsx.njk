@@ -1,6 +1,7 @@
-import { Component, PropTypes } from 'react';
+import React from 'react';
 import CSSModules from 'react-css-modules';
 import {{ className }}Style from './style.scss';
+const { Component, PropTypes } = React;
 
 @CSSModules({{ className }}Style)
 export default class {{ className }} extends Component {
@@ -21,21 +22,9 @@ export default class {{ className }} extends Component {
     this.state = {};
   }
 
-  componentWillMount() {
-  }
-
-  componentWillReceiveProps(properties) {
-  }
-
-  componentDidUpdate() {
-  }
-
-  componentWillUnmount() {
-  }
-
   render() {
     return (
-      <div styleName="{{ directoryName }}"></div>
+      <div styleName="{{ directoryName }}" />
     );
   }
 }
