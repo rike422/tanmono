@@ -31,7 +31,7 @@ function splitProptypes(val) {
       type: params[1],
       require: isRequire,
     };
-    if(propType.type !== undefined && SUPPORT_PROP_TYPES.every(
+    if (propType.type !== undefined && SUPPORT_PROP_TYPES.every(
         (supportType) => propType.type.indexOf(supportType) === -1)) {
       console.error(`
       Abort.. ${propType.type} is invalid propType
@@ -46,47 +46,71 @@ function splitProptypes(val) {
 program
   .option('-p, --prop-types <propTypes>', 'Define propTypes', splitProptypes)
   .option('-c, --css-classes <cssClasses>', 'Define css class', (val) => val.split(','))
+  .option('-s, --sub-component', 'Not producing README.md and story.js')
   .parse(process.argv);
 
 const name = program.args[0];
-const propTypes = program.propTypes;
-const cssClasses = program.cssClasses;
-
-if(name == undefined) {
+if (name == undefined) {
   console.error('Abort.. [name] is required');
   process.exit(1);
 }
 
+const componentName = path.basename(name);
+let baseDir = undefined;
+if (path.dirname(name) !== '.') {
+  baseDir = path.join.apply(path,
+    path
+      .dirname(name)
+      .split('/')
+      .map((dir) => changCase.paramCase(dir))
+  );
+}
+
+const propTypes = program.propTypes;
+const cssClasses = program.cssClasses;
+const subComponent = program.subComponent;
+
 const context = {
-  className: changCase.pascalCase(name),
-  directoryName: changCase.paramCase(name),
+  className: changCase.pascalCase(componentName),
+  baseName: changCase.paramCase(componentName),
   instanceName: changCase.camelCase(name),
   cssClasses: cssClasses,
   propTypes: propTypes,
   pkg: require('../package.json'),
 };
 
+context.directory = (baseDir === undefined) ?
+  context.baseName : path.join(baseDir, context.baseName);
+
 const GENERATE_FILES = [
   {
     from: path.join('src', 'component', 'component.jsx.njk'),
-    to: path.join('src', 'components', context.directoryName, `${context.directoryName}.jsx`),
-  },
-  {
-    from: path.join('src', 'component', 'README.md.njk'),
-    to: path.join('src', 'components', context.directoryName, 'README.md'),
+    to: path.join('src', 'components', context.directory, `${context.baseName}.jsx`),
   },
   {
     from: path.join('src', 'component', 'style.scss.njk'),
-    to: path.join('src', 'components', context.directoryName, 'style.scss'),
+    to: path.join('src', 'components', context.directory, 'style.scss'),
   },
-  {
-    from: path.join('src', 'stories', 'story.js.njk'),
-    to: path.join('src', 'components', 'stories', `${context.directoryName}.jsx`),
-  },
+
   {
     from: path.join('tests', 'test.js.njk'),
-    to: path.join('test', 'components', context.directoryName, `${context.directoryName}_spec.jsx`),
+    to: path.join('test', 'components', context.directory, `${context.baseName}_spec.jsx`),
   },
 ];
+
+if (!subComponent) {
+  GENERATE_FILES.push(
+    {
+      from: path.join('src', 'component', 'README.md.njk'),
+      to: path.join('src', 'components', context.directory, 'README.md'),
+    }
+  );
+  GENERATE_FILES.push(
+    {
+      from: path.join('src', 'stories', 'story.js.njk'),
+      to: path.join('src', 'components', 'stories', `${context.baseName}.jsx`),
+    }
+  );
+}
 
 util.generate(GENERATE_FILES, context);

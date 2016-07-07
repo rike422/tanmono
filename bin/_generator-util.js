@@ -12,13 +12,13 @@ const mkdirp = require('mkdirp');
 
 nunjucks.configure({
   trimBlocks: true,
-  lstripBlocks: true
-})
+  lstripBlocks: true,
+});
 
 function render(template, context) {
-  return new Promise(function(resolve) {
+  return new Promise((resolve) => {
     nunjucks.render(path.join(TEMPLATE_PATH, template.from), context, (err, content) => {
-      if(err != null) {
+      if (err != null) {
         console.error(err);
         process.exit(1);
       }
@@ -61,7 +61,7 @@ function resolveConflict(_template) {
 }
 
 function mkdir(outputPath, cb) {
-  mkdirp(path.join(__dirname, '../', path.dirname(outputPath)));
+  mkdirp.sync(path.join(__dirname, '../', path.dirname(outputPath)));
 }
 
 function writeFile(path, content) {
@@ -73,7 +73,7 @@ module.exports = {
   walkSync: function(dir) {
     const dirFiles = fs.readdirSync(dir);
     const files = dirFiles.map((file) => {
-      if(fs.statSync(path.join(dir, file)).isDirectory()) {
+      if (fs.statSync(path.join(dir, file)).isDirectory()) {
         return walkSync(path.join(dir, file));
       } else {
         return path.join(dir, file);
@@ -86,7 +86,7 @@ module.exports = {
     files.reduce((promise, template) => {
       return promise.then((answerHistory) => {
         var answerHistory = answerHistory || [];
-        if(fs.existsSync(template.to) && (answerHistory.every((history) => history !== 'overwrite_all'))) {
+        if (fs.existsSync(template.to) && (answerHistory.every((history) => history !== 'overwrite_all'))) {
           return resolveConflict(template).then((answer) => {
             answerHistory.push(answer.choice);
             switch (answer.choice) {
