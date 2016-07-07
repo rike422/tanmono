@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import Button from '../button/button';
-
+import Highlighter from './highlighter/highlighter'
 const ProgressButtonWrapper = React.createClass({
   getInitialState() {
     return {
@@ -26,6 +26,7 @@ const ProgressButtonWrapper = React.createClass({
             Large Button
           </Button>
         </div>
+        <Highlighter code={'function(){}'} />
       </section>
     );
   }
