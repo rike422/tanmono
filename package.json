@@ -26,6 +26,7 @@
   "author": "akira takahashi <rike422@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@kadira/react-storybook-addon-info": "^3.0.10",
     "@kadira/storybook-deployer": "^1.0.0",
     "babel-polyfill": "^6.9.1",
     "classnames": "^2.2.5",
