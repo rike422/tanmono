@@ -1,0 +1,28 @@
+@import '../../variables.scss';
+
+.wrapper {
+  box-sizing: border-box;
+  max-width: $flexboxgrid-max-width;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $outer-margin;
+  padding-left: $outer-margin;
+}
+
+@each $breakpoint in $breakpoints {
+  $config: map-get($breakpoints-data, $breakpoint);
+
+  @if $breakpoint != xs {
+    $size: nth($config, 1);
+    $container: nth($config, 2);
+    @media only screen and (min-width: $size) {
+      .container {
+        width: $container;
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import '../../variables.scss';
+
+$half-gutter-width: $gutter-width * .5;
+
+.box {
+  background: blue;
+}
+@mixin grid-col-common {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: $half-gutter-width;
+  padding-left: $half-gutter-width;
+}
+
+@mixin modificator($name) {
+  .col-#{$name} {
+    @include grid-col-common;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$name}-#{$i} {
+      @include grid-col-common;
+      flex-basis: 100% / $grid-columns * $i;
+      max-width: 100% / $grid-columns * $i;
+    }
+  }
+  @for $i from 1 through $grid-columns {
+    .col-#{$name}-offset-#{$i} {
+      margin-left: 100% / $grid-columns * $i
+    }
+  }
+
+  .col-#{$name} {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+}
+
+@each $breakpoint in $breakpoints {
+  @if $breakpoint != xs {
+    $config: map-get($breakpoints-data, $breakpoint);
+    $size: nth($config, 1);
+    @media only screen and (min-width: $size) {
+      @include modificator($breakpoint);
+    }
+  } @else {
+    @include modificator($breakpoint);
+  }
+}
