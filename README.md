@@ -93,6 +93,7 @@ options:
     -h, --help                      output usage information
     -p, --prop-types <propTypes>    Define propTypes
     -c, --css-classes <cssClasses>  Define css class
+    -s, --sub-component             Not producing README.md and story.js
 ```
 
 #### -s, --story
