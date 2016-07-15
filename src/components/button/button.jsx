@@ -19,6 +19,7 @@ export default class Button extends Component {
     size: PropTypes.oneOf(BUTTON_SIZES),
     submit: PropTypes.bool,
     loading: PropTypes.bool,
+    children: PropTypes.node,
     preventFocusStyleForTouchAndClick: PropTypes.bool,
   };
 
@@ -27,7 +28,6 @@ export default class Button extends Component {
     loading: false,
     type: 'default',
     size: 'default',
-    children: PropTypes.node,
   };
 
   constructor(props) {
@@ -54,7 +54,7 @@ export default class Button extends Component {
       <button
         styleName={style}
         submit={() => ::this.props.submit || true}
-        { ...otherProps }
+        {...otherProps}
       >
         {this.props.children}
       </button>

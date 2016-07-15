@@ -26,7 +26,7 @@ export default class Col extends Component {
   };
 
   static defaultProps = {
-    tagName: 'div'
+    tagName: 'div',
   };
 
   constructor(props) {
