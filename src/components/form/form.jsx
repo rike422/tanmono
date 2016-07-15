@@ -3,6 +3,8 @@ import CSSModules from 'react-css-modules';
 import FormStyle from './style.scss';
 const { Component, PropTypes } = React;
 
+const FORM_TYPE = ['basic', 'horizontal', 'inline']
+
 @CSSModules(FormStyle)
 export default class Form extends Component {
 
@@ -10,9 +12,13 @@ export default class Form extends Component {
 
   static propTypes = {
     layout: PropTypes.string,
+    children: PropTypes.node.isRequired,
+    type: PropTypes.oneOf(FORM_TYPE),
   };
 
   static defaultProps = {
+    component: 'form',
+    type: 'basic',
   };
 
   constructor(props) {
@@ -20,9 +26,15 @@ export default class Form extends Component {
     this.state = {};
   }
 
+  validate() {
+
+  }
+
   render() {
     return (
-      <div styleName="form" />
+      <Form styleName="form">
+        {this.props.children}
+      </Form>
     );
   }
-}
+};
