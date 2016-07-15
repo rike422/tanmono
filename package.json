@@ -52,7 +52,7 @@
     "babel-register": "^6.9.0",
     "change-case": "^3.0.0",
     "classnames": "^2.2.5",
-    "commander": "rike422/commander.js#support_subcommand_alias",
+    "commander": "tj/commander.js",
     "css-loader": "^0.23.1",
     "css-modules-require-hook": "^4.0.1",
     "csscomb": "^3.1.8",
