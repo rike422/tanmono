@@ -1,6 +1,7 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import FormFieldStyle from './style.scss';
+import Label from './lable/index';
 const { Component, PropTypes } = React;
 
 @CSSModules(FormFieldStyle)
@@ -13,7 +14,7 @@ export default class FormField extends Component {
     name: PropTypes.string,
     readonly: PropTypes.bool,
     label: PropTypes.string,
-    formFor: PropTypes.string,
+    htmlFor: PropTypes.string,
     className: PropTypes.string,
   };
 
@@ -27,7 +28,8 @@ export default class FormField extends Component {
 
   render() {
     return (
-      <div styleName="form-field" />
+      <Label>
+      </Label>
     );
   }
 }

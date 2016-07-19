@@ -12,12 +12,11 @@ export default class Label extends Component {
     id: PropTypes.string,
     name: PropTypes.string,
     label: PropTypes.string,
-    formFor: PropTypes.string,
+    htmlFor: PropTypes.string,
     className: PropTypes.string,
   };
 
-  static defaultProps = {
-  };
+  static defaultProps = {};
 
   constructor(props) {
     super(props);

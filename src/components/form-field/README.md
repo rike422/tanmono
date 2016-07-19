@@ -25,6 +25,6 @@ class ExampleComponent extends React.Component {
 | name | string | false |
 | readonly | bool | false |
 | label | string | false |
-| formFor | string | false |
+| htmlFor | string | false |
 | className | string | false |
 
