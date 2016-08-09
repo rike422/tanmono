@@ -50,6 +50,7 @@ program
   .parse(process.argv);
 
 const name = program.args[0];
+
 if (name == undefined) {
   console.error('Abort.. [name] is required');
   process.exit(1);
