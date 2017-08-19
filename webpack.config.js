@@ -37,37 +37,35 @@ module.exports = {
         ]
       }
     ],
-    loaders: [
+    rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loaders: [
+        use: [
           'babel-loader',
         ]
       },
       {
         test: /\.(css|scss)$/,
-        loaders: [
+        use: [
           'style?sourceMap',
-          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
           'resolve-url',
-          'postcss-loader',
           'sass?sourceMap'
         ],
         include: __dirname
       },
       {
         test: /\.json$/,
-        loader: 'json-loader',
+        use: 'json-loader',
         include: __dirname
       },
       {
         test: /\.(png|gif|jp(e)?g)$/,
-        loader: 'url-loader?limit=8192'
+        use: 'url-loader?limit=8192'
       },
       {
         test: /\.(ttf|eot|svg|woff(2))(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=50000'
+        use: 'url-loader?limit=50000'
       },
     ]
   }

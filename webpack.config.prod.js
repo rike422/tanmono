@@ -44,38 +44,37 @@ module.exports = {
   ],
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loaders: [
+        use: [
           'babel-loader'
         ]
       },
       {
         test: /\.(css|scss)$/,
-        loader: ExtractTextPlugin.extract(
+        use: ExtractTextPlugin.extract(
           'style-loader',
-          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
           'resolve-url',
           'postcss-loader',
-          'sass'
+          'sass-loader'
         ),
         exclude: /node_modules/,
         include: __dirname
       },
       {
         test: /\.json$/,
-        loader: 'json-loader',
+        use: 'json-loader',
         include: __dirname
       },
       {
         test: /\.(png|gif|jp(e)?g)$/,
-        loader: 'url-loader?limit=8192'
+        use: 'url-loader?limit=8192'
       },
       {
         test: /\.(ttf|eot|svg|woff(2))(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=50000'
+        use: 'url-loader?limit=50000'
       },
     ]
   }
