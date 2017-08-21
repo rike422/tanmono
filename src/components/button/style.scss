@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@import '../../style/variables.scss';
 
 @mixin set-bg-color-and-hover($baseColor) {
   background-color: $baseColor;
