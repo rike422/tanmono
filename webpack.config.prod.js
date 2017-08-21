@@ -56,6 +56,12 @@ module.exports = {
         test: /\.(css|scss)$/,
         use: ExtractTextPlugin.extract(
           'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
           'resolve-url',
           'postcss-loader',
           'sass-loader'

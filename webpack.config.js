@@ -48,7 +48,13 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [
-          'style?sourceMap',
+          'style-loader?sourceMap',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
           'resolve-url',
           'sass?sourceMap'
         ],
