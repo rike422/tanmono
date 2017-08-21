@@ -34,7 +34,8 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
+    enforceExtension: false,
+    extensions: ['.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
     root: path.resolve(path.join(__dirname, 'src')),
   },
 

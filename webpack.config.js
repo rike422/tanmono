@@ -16,14 +16,10 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
+    enforceExtension: false,
+    extensions: ['.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
     root: [path.resolve('src')],
   },
-
-  postcss: [
-    require('autoprefixer'),
-    require('postcss-color-rebeccapurple')
-  ],
 
   module: {
     preLoaders: [
