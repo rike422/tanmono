@@ -17,7 +17,7 @@ module.exports = {
     new ExtractTextPlugin('app.css', {
       allChunks: true
     }),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
@@ -34,14 +34,12 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
-    root: path.resolve(path.join(__dirname, 'src')),
+    enforceExtension: false,
+    extensions: ['.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
+    modules: [
+      path.resolve(__dirname, "src"),
+      'node_modules'],
   },
-
-  postcss: [
-    require('autoprefixer'),
-    require('postcss-color-rebeccapurple')
-  ],
 
   module: {
     rules: [
@@ -54,17 +52,26 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: ExtractTextPlugin.extract(
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
-          'resolve-url',
-          'postcss-loader',
-          'sass-loader'
+        use: ExtractTextPlugin.extract({
+            fallback: [{
+              loader: 'style-loader'
+            }],
+            use: [
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                  minimize: true,
+                  modules: true,
+                  importLoaders: true,
+                  localIdentName: '[name]__[local]--[hash:base64:5]',
+                },
+              },
+              'resolve-url-loader',
+              'postcss-loader',
+              'sass-loader'
+            ]
+          }
         ),
         exclude: /node_modules/,
         include: __dirname
