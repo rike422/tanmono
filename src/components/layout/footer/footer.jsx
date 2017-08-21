@@ -1,6 +1,8 @@
+import classnames from 'classnames';
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import FooterStyle from './style.scss';
+
 const { Component, PropTypes } = React;
 
 @CSSModules(FooterStyle)
@@ -13,17 +15,19 @@ export default class Footer extends Component {
     className: PropTypes.string,
   };
 
-  static defaultProps = {
-  };
+  static defaultProps = {};
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {};
   }
 
-  render() {
-    return (
-      <div styleName="footer" />
-    );
+  render () {
+    const { className, children, ...others } = this.props;
+
+    const containerClass = FooterStyle.footer
+    return React.createElement('div', Object.assign({}, others, {
+      className: classnames(className, containerClass),
+    }), children);
   }
 }

@@ -1,40 +1,8 @@
 @import "../../style/variables";
 
-$layout-prefix-cls: #{"${ant-prefix}-layout"};
-
-.#{layout-prefix-cls} {
+.layout {
   display: flex;
   flex-direction: column;
   flex: auto;
   background: $layout-body-background;
-
-  &&-has-sider {
-    flex-direction: row;
-    > .#{layout-prefix-cls},
-    > .#{layout-prefix-cls}-content {
-      overflow-x: hidden;
-    }
-  }
-
-  &-header,
-  &-footer {
-    flex: 0 0 auto;
-  }
-
-  &-header {
-    background: $layout-header-background;
-    padding: $layout-header-padding;
-    height: $layout-header-height;
-    line-height: $layout-header-height;
-  }
-
-  &-footer {
-    padding: $layout-footer-padding;
-    color: $text-color;
-    font-size: $font-size-base;
-  }
-
-  &-content {
-    flex: auto;
-  }
 }

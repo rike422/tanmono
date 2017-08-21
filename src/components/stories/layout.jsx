@@ -1,8 +1,19 @@
+import { storiesOf } from '@kadira/storybook';
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
 import { Layout } from '../../index';
 
+const { Header, Footer, Content } = Layout;
+
 storiesOf('Layout', module)
-  .add('render', () => <Layout></Layout>)
+  .add('render', () => {
+
+    return (
+      <Layout>
+        <Header> Header Content</Header>
+        <Content> </Content>
+        <Footer> FooterContent </Footer>
+      </Layout>
+    )
+  })
 
 

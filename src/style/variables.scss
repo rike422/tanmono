@@ -58,3 +58,11 @@ $breakpoints-data: (
         lg: 75em 71rem
 );
 $flexboxgrid-max-width: 1200px !default;
+
+// Layout
+// ------------------------------
+$layout-body-background: #ececec;
+$layout-header-background: #404040;
+$layout-header-height: 64px;
+$layout-header-padding: 0 50px;
+$layout-footer-padding: 24px 50px;

@@ -1,4 +1,6 @@
-.footer {
-    background: transparent;
-}
+@import "../style";
 
+.footer {
+    padding: $layout-footer-padding;
+    font-size: $font-size-lg;
+}
