@@ -1,6 +1,8 @@
+import classnames from 'classnames';
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import ContentStyle from './style.scss';
+
 const { Component, PropTypes } = React;
 
 @CSSModules(ContentStyle)
@@ -13,17 +15,19 @@ export default class Content extends Component {
     className: PropTypes.string,
   };
 
-  static defaultProps = {
-  };
+  static defaultProps = {};
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {};
   }
 
-  render() {
-    return (
-      <div styleName="content" />
-    );
+  render () {
+    const { className, children, ...others } = this.props;
+
+    const containerClass = ContentStyle.content
+    return React.createElement('div', Object.assign({}, others, {
+      className: classnames(className, containerClass),
+    }), children);
   }
 }

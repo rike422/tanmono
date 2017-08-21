@@ -1,7 +1,7 @@
 import React from 'react';
 import assert from 'power-assert';
-import Header from 'components/header/header';
-import HeaderStyle from 'components/header/style';
+import Header from 'components/layout/header/header';
+import HeaderStyle from 'components/layout/header/style';
 import { shallow } from 'enzyme';
 
 describe('<Header>', () => {

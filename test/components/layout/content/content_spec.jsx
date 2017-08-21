@@ -1,7 +1,7 @@
 import React from 'react';
 import assert from 'power-assert';
-import Content from 'components/content/content';
-import ContentStyle from 'components/content/style';
+import Content from 'components/layout/content/content';
+import ContentStyle from 'components/layout/content/style';
 import { shallow } from 'enzyme';
 
 describe('<Content>', () => {
