@@ -54,7 +54,7 @@
     "babel-register": "^6.26.0",
     "change-case": "^3.0.1",
     "classnames": "^2.2.5",
-    "commander": "tj/commander.js",
+    "commander": "^2.11.0",
     "css-loader": "^0.28.5",
     "css-modules-require-hook": "^4.0.6",
     "csscomb": "^4.2.0",
