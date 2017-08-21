@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 import Grid from '../grid/grid';
 import Row from '../row/row';
 import Col from '../col/col';

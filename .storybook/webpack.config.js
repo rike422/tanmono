@@ -9,33 +9,38 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
+    enforceExtension: false,
+    extensions: ['.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.scss/,
-        loaders: [
-          'style?sourceMap',
-          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-          'resolve-url',
-          'postcss-loader',
-          'sass?sourceMap'
+        test: /\.(css|scss)$/,
+        use: [
+          'style-loader?sourceMap',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+          'resolve-url-loader',
+          'sass-loader'
         ],
         include: path.resolve(__dirname, '../')
       },
       {
         test: /\.json$/,
-        loader: 'json-loader',
+        use: 'json-loader',
         include: path.resolve(__dirname, '../')
       },
       {
         test: /\.(png|gif|jp(e)?g)$/,
-        loader: 'url-loader?limit=8192'
+        use: 'url-loader?limit=8192'
       },
       {
         test: /\.(ttf|eot|svg|woff(2))(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=50000'
+        use: 'url-loader?limit=50000'
       },
     ]
   }
