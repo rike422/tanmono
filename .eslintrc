@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb",
+  "extends": "semistandard-react",
   "parser": "babel-eslint",
   "globals": {
     "describe": true,
