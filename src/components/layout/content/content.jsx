@@ -11,7 +11,8 @@ export default class Content extends Component {
 
   static propTypes = {
     style: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    children: PropTypes.node
   };
 
   static defaultProps = {};

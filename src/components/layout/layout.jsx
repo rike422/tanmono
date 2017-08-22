@@ -14,7 +14,8 @@ class Layout extends Component {
 
   static propTypes = {
     style: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    children: PropTypes.node
   };
 
   static defaultProps = {};
