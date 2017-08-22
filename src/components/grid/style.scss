@@ -3,7 +3,7 @@
 .wrapper {
   box-sizing: border-box;
   max-width: $flexboxgrid-max-width;
-  margin: 0 auto;
+  margin: $flexboxgrid-margin;
 }
 
 .container-fluid {
