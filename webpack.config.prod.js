@@ -52,17 +52,21 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: ExtractTextPlugin.extract(
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-            },
-          },
-          'resolve-url-loader',
-          'postcss-loader',
-          'sass-loader'
+        use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              'style-loader',
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                },
+              },
+              'resolve-url-loader',
+              'postcss-loader',
+              'sass-loader'
+            ]
+          }
         ),
         exclude: /node_modules/,
         include: __dirname
