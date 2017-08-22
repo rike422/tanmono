@@ -7,12 +7,11 @@ const { Component, PropTypes } = React;
 
 @CSSModules(ContentStyle)
 export default class Content extends Component {
-
   static displayName = 'Content';
 
   static propTypes = {
     style: PropTypes.string,
-    className: PropTypes.string,
+    className: PropTypes.string
   };
 
   static defaultProps = {};
@@ -25,9 +24,9 @@ export default class Content extends Component {
   render () {
     const { className, children, ...others } = this.props;
 
-    const containerClass = ContentStyle.content
+    const containerClass = ContentStyle.content;
     return React.createElement('div', Object.assign({}, others, {
-      className: classnames(className, containerClass),
+      className: classnames(className, containerClass)
     }), children);
   }
 }
