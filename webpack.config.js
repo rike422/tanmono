@@ -7,7 +7,7 @@ module.exports = {
     index: './src/index.js'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
@@ -18,22 +18,21 @@ module.exports = {
   resolve: {
     enforceExtension: false,
     extensions: ['.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
-    root: [path.resolve('src')],
+    module: [path.resolve('src'), 'node_modules'],
   },
 
   module: {
-    preLoaders: [
+    rules: [
       {
         test: /\.(js|jsx)$/,
         loader: 'eslint-loader',
         exclude: /(node_modules|bower_components)/,
+        enforce: 'pre',
         include: [
           path.resolve('src'),
           path.resolve('test')
         ]
-      }
-    ],
-    rules: [
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
