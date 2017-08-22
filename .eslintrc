@@ -13,6 +13,7 @@
     "import/resolver": "webpack"
   },
   "rules": {
+    "semistandard-react/no-unused-prop-types": [1],
     "new-cap": [ 1, { "capIsNew": false } ], // For es7/decorators
   },
   "parserOptions": {
