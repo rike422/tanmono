@@ -1,7 +1,8 @@
+import classnames from 'classnames';
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import GridStyle from './style.scss';
-import classnames from 'classnames';
+
 const { Component, PropTypes } = React;
 
 @CSSModules(GridStyle, { allowMultiple: true })

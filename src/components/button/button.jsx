@@ -1,7 +1,8 @@
+import classnames from 'classnames';
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import ButtonStyle from './style.scss';
-import classnames from 'classnames';
+
 const { PropTypes, Component } = React;
 
 const BUTTON_TYPES = ['default', 'primary', 'success', 'warning', 'danger'];

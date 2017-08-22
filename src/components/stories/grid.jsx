@@ -1,8 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
+import Col from '../col/col';
 import Grid from '../grid/grid';
 import Row from '../row/row';
-import Col from '../col/col';
 import Style from './style';
 
 const { Component, PropTypes } = React;
@@ -11,7 +11,7 @@ const Box = (props) => {
   return (
     <Col {...props}>
       <div className={Style[props.type || 'box']}>
-           {props.children}
+        {props.children}
       </div>
     </Col>
   );

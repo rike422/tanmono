@@ -1,7 +1,8 @@
+import classnames from 'classnames';
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import RowStyle from './style.scss';
-import classnames from 'classnames';
+
 const { Component, PropTypes } = React;
 
 const MODIFIER_TYPE = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
