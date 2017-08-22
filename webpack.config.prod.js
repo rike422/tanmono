@@ -36,13 +36,8 @@ module.exports = {
   resolve: {
     enforceExtension: false,
     extensions: ['.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
-    root: path.resolve(path.join(__dirname, 'src')),
+    modules: [path.resolve('src'), 'node_modules'],
   },
-
-  postcss: [
-    require('autoprefixer'),
-    require('postcss-color-rebeccapurple')
-  ],
 
   module: {
     rules: [

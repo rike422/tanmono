@@ -18,7 +18,7 @@ module.exports = {
   resolve: {
     enforceExtension: false,
     extensions: ['.js', '.json', '.coffee', '.css', '.scss', '.jsx'],
-    module: [path.resolve('src'), 'node_modules'],
+    modules: [path.resolve('src'), 'node_modules'],
   },
 
   module: {
@@ -51,7 +51,7 @@ module.exports = {
             },
           },
           'resolve-url',
-          'sass?sourceMap'
+          'sass-loader?sourceMap'
         ],
         include: __dirname
       },
