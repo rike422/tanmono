@@ -1,7 +1,8 @@
+import classnames from 'classnames';
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import ButtonStyle from './style.scss';
-import classnames from 'classnames';
+
 const { PropTypes, Component } = React;
 
 const BUTTON_TYPES = ['default', 'primary', 'success', 'warning', 'danger'];
@@ -9,7 +10,6 @@ const BUTTON_SIZES = ['default', 'large'];
 
 @CSSModules(ButtonStyle, { allowMultiple: true })
 export default class Button extends Component {
-
   static displayName = 'Button';
 
   static propTypes = {
@@ -20,34 +20,34 @@ export default class Button extends Component {
     submit: PropTypes.bool,
     loading: PropTypes.bool,
     children: PropTypes.node,
-    preventFocusStyleForTouchAndClick: PropTypes.bool,
+    preventFocusStyleForTouchAndClick: PropTypes.bool
   };
 
   static defaultProps = {
     disabled: false,
     loading: false,
     type: 'default',
-    size: 'default',
+    size: 'default'
   };
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {};
   }
 
-  componentWillMount() {
+  componentWillMount () {
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps () {
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
   }
 
-  render() {
+  render () {
     const { type, size, loading, ...otherProps } = this.props;
     const style = classnames(type, size, { loading });
     return (

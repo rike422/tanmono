@@ -7,12 +7,12 @@ const { Component, PropTypes } = React;
 
 @CSSModules(FooterStyle)
 export default class Footer extends Component {
-
   static displayName = 'Footer';
 
   static propTypes = {
     style: PropTypes.string,
     className: PropTypes.string,
+    children: PropTypes.node
   };
 
   static defaultProps = {};
@@ -25,9 +25,9 @@ export default class Footer extends Component {
   render () {
     const { className, children, ...others } = this.props;
 
-    const containerClass = FooterStyle.footer
+    const containerClass = FooterStyle.footer;
     return React.createElement('div', Object.assign({}, others, {
-      className: classnames(className, containerClass),
+      className: classnames(className, containerClass)
     }), children);
   }
 }

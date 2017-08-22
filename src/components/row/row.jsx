@@ -1,12 +1,13 @@
+import classnames from 'classnames';
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import RowStyle from './style.scss';
-import classnames from 'classnames';
+
 const { Component, PropTypes } = React;
 
 const MODIFIER_TYPE = PropTypes.oneOf(['xs', 'sm', 'md', 'lg']);
 const MODIFIER_KEYS = ['start', 'center', 'end', 'top', 'middle',
-                       'bottom', 'around', 'between', 'first', 'last'];
+  'bottom', 'around', 'between', 'first', 'last'];
 
 @CSSModules(RowStyle, { allowMultiple: true })
 export default class Row extends Component {
@@ -26,20 +27,20 @@ export default class Row extends Component {
     last: MODIFIER_TYPE,
     className: PropTypes.string,
     tagName: PropTypes.string,
-    children: PropTypes.node,
+    children: PropTypes.node
   };
 
   static defaultProps = {
     revers: false,
-    tagName: 'div',
+    tagName: 'div'
   };
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {};
   }
 
-  render() {
+  render () {
     const modificators = [RowStyle.row];
     const { reverse, className, children, tagName } = this.props;
 
@@ -48,7 +49,7 @@ export default class Row extends Component {
         const value = this.props[key];
         if (value == null) return memo;
         return Object.assign(memo, {
-          [RowStyle[`${key}-${value}`]]: true,
+          [RowStyle[`${key}-${value}`]]: true
         });
       }, {})
     );
@@ -58,7 +59,7 @@ export default class Row extends Component {
     }
 
     return React.createElement(tagName, Object.assign({}, this.props, {
-      className: classnames(className, modificators),
+      className: classnames(className, modificators)
     }), children);
   }
 }

@@ -7,12 +7,12 @@ const { Component, PropTypes } = React;
 
 @CSSModules(HeaderStyle)
 export default class Header extends Component {
-
   static displayName = 'Header';
 
   static propTypes = {
     style: PropTypes.string,
     className: PropTypes.string,
+    children: PropTypes.node
   };
 
   static defaultProps = {};
@@ -25,9 +25,9 @@ export default class Header extends Component {
   render () {
     const { className, children, ...others } = this.props;
 
-    const containerClass = HeaderStyle.header
+    const containerClass = HeaderStyle.header;
     return React.createElement('div', Object.assign({}, others, {
-      className: classnames(className, containerClass),
+      className: classnames(className, containerClass)
     }), children);
   }
 }

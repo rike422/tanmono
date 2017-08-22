@@ -5,6 +5,7 @@ $half-gutter-width: $gutter-width * .5;
 .box {
   background: blue;
 }
+
 @mixin grid-col-common {
   box-sizing: border-box;
   flex: 0 0 auto;
