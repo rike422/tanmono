@@ -24,7 +24,7 @@ $color-white: #FFF !default;
 $color-yellow: #F0BA32 !default;
 
 $color-header: opacify($color-text, 0.85);
-$text-color-secondary: opacify($color-text, 43%);
+$text-color-secondary: opacify($color-text, 0.43);
 
 $app-danger: $color-red;
 $app-info: $color-blue;
