@@ -23,6 +23,9 @@ $color-text: #4A4A4A !default;
 $color-white: #FFF !default;
 $color-yellow: #F0BA32 !default;
 
+$color-header: opacify($color-text, 0.85);
+$text-color-secondary: opacify($color-text, 43%);
+
 $app-danger: $color-red;
 $app-info: $color-blue;
 $app-success: $color-green;
@@ -62,8 +65,8 @@ $flexboxgrid-margin: 1200 0 auto !default;
 
 // Layout
 // ------------------------------
-$layout-body-background: #ECECEC !default;
-$layout-header-background: #404040 !default;
+$layout-body-background: $background-color-code !default;
+$layout-header-background: #FFF !default;
 $layout-header-height: 64px;
 $layout-header-padding: 0 50px;
 $layout-footer-padding: 24px 50px;

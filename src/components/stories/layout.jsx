@@ -10,7 +10,15 @@ storiesOf('Layout', module)
     return (
       <Layout>
         <Header> Header Content</Header>
-        <Content> </Content>
+        <Content> Main Content !
+
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+
+        </Content>
         <Footer> FooterContent </Footer>
       </Layout>
     )
