@@ -26,9 +26,6 @@
   "author": "akira takahashi <rike422@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@kadira/react-storybook-addon-info": "^3.4.0",
-    "@kadira/storybook-deployer": "^1.2.0",
-    "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
     "normalize.css": "^7.0.0",
     "react": "^15.6.1",
@@ -38,6 +35,8 @@
   "devDependencies": {
     "@storybook/addon-info": "^3.2.5",
     "@storybook/react": "3.2.5",
+    "@storybook/storybook-deployer": "^2.0.0",
+    "babel-polyfill": "^6.26.0",
     "autoprefixer": "^7.1.2",
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
